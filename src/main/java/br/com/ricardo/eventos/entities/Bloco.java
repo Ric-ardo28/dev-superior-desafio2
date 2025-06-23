@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -20,4 +22,7 @@ public class Bloco {
 	private Long id;
 	private Instant inicio;
 	private Instant fim;
+
+	@ManyToOne
+	private Atividade atividade;
 }

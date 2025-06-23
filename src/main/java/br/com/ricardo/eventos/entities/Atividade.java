@@ -28,6 +28,12 @@ public class Atividade {
 	@JoinTable(name = "tb_atividade_participante",
 			joinColumns = @JoinColumn(name = "atividade_id"),
 			inverseJoinColumns = @JoinColumn(name = "participante_id"))
-	private List<Participante> Participantes = new ArrayList<>();
+	private List<Participante> participantes = new ArrayList<>();
+
+	@ManyToOne
+	private Categoria categoria;
+
+	@OneToMany(mappedBy = "atividade")
+	private List<Bloco> blocos = new ArrayList<>();
 
 }
